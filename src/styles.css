@@ -186,9 +186,9 @@
 
 @layer components {
   .frame {
-    @apply w-full max-w-6xl border-x border-border-subtle;
+    @apply w-full  border-x border-border-subtle;
   }
-
+  /* max-w-6xl */
   .skills-grid {
     @apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3;
   }
