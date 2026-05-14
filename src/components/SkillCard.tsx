@@ -19,6 +19,7 @@ type SkillCardProps = {
 	author: {
 		email: string | null;
 		clerkId: string | null;
+		username: string | null;
 	};
 };
 const SkillCard = ({
@@ -69,7 +70,7 @@ const SkillCard = ({
 							className="avatar"
 						/>
 						<div className="author-copy">
-							<p>Jugal</p>
+							<p>{author?.username}</p>
 							<p>
 								{createdAt
 									? new Date(createdAt).toLocaleDateString()

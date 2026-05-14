@@ -1,3 +1,5 @@
+import type { SkillRecord } from "../../type";
+
 export const dummySkills: SkillRecord[] = [
 	{
 		id: "skill-001",

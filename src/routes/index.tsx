@@ -37,7 +37,8 @@ function Home() {
 					</h2>
 					<p>
 						{" "}
-						Latest skills loaded from database in descending creation order.
+						Latest skills loaded from local dummy data in descending creation
+						order.
 					</p>
 				</div>
 				<div>
