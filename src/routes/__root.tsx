@@ -77,7 +77,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<HeadContent />
 			</head>
 			<body>
-				<PostHogProvider
+				{/* <PostHogProvider
 					apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN!}
 					options={{
 						api_host: "/ingest",
@@ -88,36 +88,36 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 						capture_exceptions: true,
 						debug: import.meta.env.DEV,
 					}}
-				>
-					<ClerkProvider>
-						<PostHogAuthSync />
-						<div className="root-layout">
-							<header>
-								<div className="frame">
-									<Navbar />
-									<Crosshair />
-									<Crosshair />
-								</div>
-							</header>
-							<main>
-								<div className="frame">{children}</div>
-							</main>
-						</div>
-						<TanStackDevtools
-							config={{
-								position: "bottom-right",
-							}}
-							plugins={[
-								{
-									name: "Tanstack Router",
-									render: <TanStackRouterDevtoolsPanel />,
-								},
-								TanStackQueryDevtools,
-							]}
-						/>
-						<Toaster />
-					</ClerkProvider>
-				</PostHogProvider>
+				> */}
+				<ClerkProvider>
+					<PostHogAuthSync />
+					<div className="root-layout">
+						<header>
+							<div className="frame">
+								<Navbar />
+								<Crosshair />
+								<Crosshair />
+							</div>
+						</header>
+						<main>
+							<div className="frame">{children}</div>
+						</main>
+					</div>
+					<TanStackDevtools
+						config={{
+							position: "bottom-right",
+						}}
+						plugins={[
+							{
+								name: "Tanstack Router",
+								render: <TanStackRouterDevtoolsPanel />,
+							},
+							TanStackQueryDevtools,
+						]}
+					/>
+					<Toaster />
+				</ClerkProvider>
+				{/* </PostHogProvider> */}
 				<Scripts />
 			</body>
 		</html>

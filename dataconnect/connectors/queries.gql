@@ -1,4 +1,4 @@
-query GetSkills($searchTerm: String = "", $limit: Int = 10) @auth(level: PUBLIC insecureReason: "Skills should be visible to everyone") {
+query GetSkills($searchTerm: String = "", $limit: Int = 10, $offset: Int = 0) @auth(level: PUBLIC insecureReason: "Skills should be visible to everyone") {
   skills(
   where: {
       _or: [
@@ -10,6 +10,7 @@ query GetSkills($searchTerm: String = "", $limit: Int = 10) @auth(level: PUBLIC 
        createdAt: DESC
     }],
     limit: $limit
+    offset: $offset,
   ) {
     id title description tags createdAt installCommand
     author { username imageUrl clerkId email }
