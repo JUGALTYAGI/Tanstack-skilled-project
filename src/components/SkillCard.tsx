@@ -9,31 +9,21 @@ import {
 } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 import { useState } from "react";
+import type { GetSkillsData } from "#/dataconnect-generated";
 
-type SkillCardProps = {
-	createdAt: string;
-	description: string;
-	installCommand: string;
-	tags: string[];
-	title: string;
-	category: string;
-	author: {
-		email: string | null;
-		clerkId: string | null;
-		username: string | null;
-	};
-};
+type SkillCardProps = GetSkillsData["skills"][number];
+
 const SkillCard = ({
 	createdAt,
 	description,
 	installCommand,
 	tags,
 	title,
-	category,
 	author,
 }: SkillCardProps) => {
 	const [copied, setCopied] = useState(false);
 	const posthog = usePostHog();
+	const category = tags[0] ?? "General";
 
 	const handleCopy = async () => {
 		try {
@@ -79,8 +69,8 @@ const SkillCard = ({
 				<div className="meta">
 					<div className="author">
 						<img
-							src={"/logo512.png"}
-							alt={`author avatar`}
+							src={author.imageUrl || "/logo512.png"}
+							alt={`${author.username} avatar`}
 							className="avatar"
 						/>
 						<div className="author-copy">
