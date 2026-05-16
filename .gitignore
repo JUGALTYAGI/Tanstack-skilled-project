@@ -11,6 +11,8 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+user.json
+data.txt
 
 # firebase data connect
 .firebase

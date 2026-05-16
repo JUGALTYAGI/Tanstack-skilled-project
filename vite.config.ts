@@ -29,6 +29,9 @@ const config = defineConfig({
 				secure: false,
 			},
 		},
+		hmr: {
+			overlay: false,
+		},
 	},
 	plugins: [
 		devtools(),
